@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+rainbow_table.json
+refactor.py
+dist/
+build/
+*.spec
+.vscode/
