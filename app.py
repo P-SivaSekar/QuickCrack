@@ -83,8 +83,9 @@ with tab1:
                         res_str = f"{h} : {method}"
                     else:
                         res_str = f"{h} : {method} : {val}"
-                    st.write(res_str)
                     results_text += res_str + "\n"
+
+                st.text_area("Cracking Output", value=results_text, height=300)
 
                 st.download_button(
                     label="Download Results",
