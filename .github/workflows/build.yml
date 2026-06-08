@@ -13,7 +13,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -28,9 +28,14 @@ jobs:
     - name: Build with PyInstaller
       run: |
         pyinstaller --noconfirm --onedir --windowed --add-data "background.png;." Final.py
+        copy wordlist.txt dist\Final\
+        copy handshake.cap dist\Final\
+        copy hashes.txt dist\Final\
+        copy sample_rainbow_table.json dist\Final\
+        copy README.md dist\Final\
         
     - name: Archive build
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: QuickCrack-Windows
         path: dist/Final/
@@ -40,7 +45,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: QuickCrack-Windows
           path: QuickCrack-Windows
