@@ -27,7 +27,7 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --noconfirm --onedir --windowed --add-data "background.png;." Final.py
+        pyinstaller --noconfirm --onedir --windowed Final.py
         copy wordlist.txt dist\Final\
         copy handshake.cap dist\Final\
         copy hashes.txt dist\Final\
