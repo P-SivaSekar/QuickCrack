@@ -7,7 +7,7 @@ from backend import (
     RainbowTable, Cracker,
     read_text_file_with_bom, pbkdf2_sha1, customPRF512,
     mac_to_bytes, order_pair, build_eapol_for_mic, scan_eapol_packets,
-    parse_eapol_key_fields, find_anonce_snonce, verify_with_wordlist, SCAPY_IMPORT_ERROR
+    parse_eapol_key_fields, find_anonce_snonce, verify_with_wordlist, SCAPY_IMPORT_ERROR, Dot11
 )
 
 st.set_page_config(page_title="QuickCrack", page_icon="🔐", layout="wide")
